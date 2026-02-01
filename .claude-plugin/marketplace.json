@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "multi-model-cli-orchestrator",
+  "description": "Multi-Model CLI Orchestrator - Delegate tasks to specialist LLM CLIs",
+  "owner": {
+    "name": "syedadeel2",
+    "email": "syedadeel2@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "multi-model-orchestrator",
+      "description": "Delegate tasks to specialist LLM CLIs based on their strengths",
+      "version": "0.1.0",
+      "author": {
+        "name": "syedadeel2",
+        "email": "syedadeel2@gmail.com"
+      },
+      "source": ".",
+      "category": "development",
+      "homepage": "https://github.com/syedadeel2/multi-model-cli-orchestrator"
+    }
+  ]
+}
