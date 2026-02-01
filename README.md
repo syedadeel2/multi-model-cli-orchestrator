@@ -79,12 +79,22 @@ Routing adjusted: codex tasks → claude fallback
 ## Installation
 
 ```bash
-# Clone to your Claude Code plugins directory
+# Add the marketplace and install the plugin
+claude plugin marketplace add https://github.com/syedadeel2/multi-model-cli-orchestrator
+claude plugin install multi-model-orchestrator@multi-model-cli-orchestrator
+
+# Restart Claude Code to activate
+```
+
+<details>
+<summary>Alternative: Manual installation</summary>
+
+```bash
 git clone https://github.com/syedadeel2/multi-model-cli-orchestrator.git \
   ~/.claude/plugins/multi-model-cli-orchestrator
-
-# Restart Claude Code - plugin auto-loads
 ```
+
+</details>
 
 ## Quick Start
 
