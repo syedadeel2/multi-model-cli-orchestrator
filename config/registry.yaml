@@ -47,7 +47,7 @@ clis:
     paths:
       - /home/syedadeel2/.nvm/versions/node/v24.13.0/bin/codex
       - /mnt/c/nvm4w/nodejs/codex
-    args: ["--full-auto"]
+    args: []
     strengths:
       - large-context
       - analysis

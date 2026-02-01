@@ -79,8 +79,8 @@ execute_cli() {
             "$cli_path" "$prompt" 2>&1 | stream_with_attribution "$cli" || exit_code=$?
             ;;
         codex)
-            # Codex CLI - uses --full-auto flag
-            "$cli_path" --full-auto "$prompt" 2>&1 | stream_with_attribution "$cli" || exit_code=$?
+            # Codex CLI - uses exec subcommand for non-interactive mode
+            "$cli_path" exec "$prompt" 2>&1 | stream_with_attribution "$cli" || exit_code=$?
             ;;
         *)
             echo "Unknown CLI: $cli"
