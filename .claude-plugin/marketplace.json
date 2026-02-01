@@ -15,7 +15,7 @@
         "name": "syedadeel2",
         "email": "syedadeel2@gmail.com"
       },
-      "source": ".",
+      "source": "./",
       "category": "development",
       "homepage": "https://github.com/syedadeel2/multi-model-cli-orchestrator"
     }
