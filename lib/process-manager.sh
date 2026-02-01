@@ -6,9 +6,6 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
-# Source registry functions
-source "${SCRIPT_DIR}/registry.sh" 2>/dev/null || true
-
 # ANSI color codes
 declare -A COLORS=(
     [kimi]="\033[35m"     # magenta
