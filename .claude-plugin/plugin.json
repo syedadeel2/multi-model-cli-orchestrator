@@ -1,0 +1,10 @@
+{
+  "name": "multi-model-orchestrator",
+  "description": "Delegate tasks to specialist LLM CLIs based on their strengths",
+  "version": "0.1.0",
+  "author": {
+    "name": "syedadeel2",
+    "email": "syedadeel2@gmail.com"
+  },
+  "keywords": ["multi-model", "orchestrator", "kimi", "gemini", "codex", "delegation"]
+}

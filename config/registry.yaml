@@ -1,0 +1,72 @@
+# CLI Registry - defines available specialist CLIs
+clis:
+  kimi:
+    command: kimi
+    paths:
+      - /home/syedadeel2/.local/bin/kimi
+      - /home/syedadeel2/.local/share/uv/tools/kimi-cli/bin/kimi
+    args: ["--yolo", "-p"]
+    strengths:
+      - frontend
+      - design
+      - ui
+      - ux
+      - css
+      - animations
+      - react
+      - vue
+      - tailwind
+      - landing-page
+      - component
+      - visual
+    timeout: 600
+    color: magenta
+
+  gemini:
+    command: gemini
+    paths:
+      - /mnt/c/nvm4w/nodejs/gemini
+    args: []
+    strengths:
+      - research
+      - search
+      - summarize
+      - web
+      - content
+      - writing
+      - documentation
+      - explain
+      - "what is"
+      - "find out"
+    timeout: 300
+    color: blue
+
+  codex:
+    command: codex
+    paths:
+      - /mnt/c/nvm4w/nodejs/codex
+    args: ["--full-auto"]
+    strengths:
+      - large-context
+      - analysis
+      - codebase-wide
+      - refactor
+      - legacy
+      - "entire codebase"
+      - "all files"
+    timeout: 600
+    color: green
+
+  claude:
+    command: claude
+    is_host: true
+    strengths:
+      - coding
+      - debugging
+      - architecture
+      - testing
+      - backend
+      - api
+      - fix
+      - implement
+    color: yellow

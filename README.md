@@ -2,7 +2,7 @@
 
 > **Use the right AI for the job.** A Claude Code plugin that intelligently delegates tasks to specialist LLM CLIs based on their strengths.
 
-[![Status](https://img.shields.io/badge/status-design%20phase-yellow)](docs/plans/)
+[![Status](https://img.shields.io/badge/status-beta-brightgreen)](docs/plans/)
 [![Claude Code](https://img.shields.io/badge/claude--code-plugin-blue)](https://docs.anthropic.com/en/docs/claude-code)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -80,8 +80,8 @@ Routing adjusted: codex tasks → claude fallback
 
 ```bash
 # Clone to your Claude Code plugins directory
-git clone https://github.com/syedadeel2/multi-model-orchestrator.git \
-  ~/.claude/plugins/multi-model-orchestrator
+git clone https://github.com/syedadeel2/multi-model-cli-orchestrator.git \
+  ~/.claude/plugins/multi-model-cli-orchestrator
 
 # Restart Claude Code - plugin auto-loads
 ```
@@ -157,19 +157,43 @@ routing:
 2. **Registry** tracks installed CLIs and their capabilities
 3. **Process Manager** spawns subprocesses and streams output
 
-## Project Status
+## Plugin Structure
 
-> **Currently in design phase.** We're building the implementation based on our [detailed design docs](docs/plans/).
+```
+multi-model-cli-orchestrator/
+├── .claude-plugin/
+│   └── plugin.json          # Plugin manifest
+├── config/
+│   ├── registry.yaml        # CLI definitions & paths
+│   └── routing.yaml         # Confidence patterns & thresholds
+├── lib/
+│   ├── registry.sh          # CLI detection & availability
+│   ├── router.sh            # Confidence scoring & routing
+│   └── process-manager.sh   # Subprocess spawning & streaming
+├── skills/
+│   └── delegate/
+│       └── SKILL.md         # @cli explicit delegation
+├── commands/
+│   └── mmco-status.md       # /mmco-status command
+├── hooks/
+│   ├── hooks.json           # Hook registrations
+│   ├── analyze-prompt.sh    # Auto-analyze for delegation
+│   └── session-start.sh     # CLI availability check
+└── docs/
+    └── plans/               # Design documents
+```
+
+## Project Status
 
 ### Roadmap
 
 - [x] Design document & architecture
 - [x] Implementation plan
-- [ ] Phase 1: Core foundation (plugin scaffold, registry, subprocess spawning)
-- [ ] Phase 2: Routing intelligence (confidence scoring, pattern matching)
-- [ ] Phase 3: Delegation flow (hooks, suggestions, approval workflow)
+- [x] Phase 1: Core foundation (plugin scaffold, registry, subprocess spawning)
+- [x] Phase 2: Routing intelligence (confidence scoring, pattern matching)
+- [x] Phase 3: Delegation flow (hooks, suggestions, approval workflow)
 - [ ] Phase 4: Parallel execution
-- [ ] Phase 5: Polish & UX
+- [ ] Phase 5: Polish & UX (history, stats, advanced config)
 
 **Want to help?** See [Contributing](#contributing) below.
 
@@ -186,12 +210,13 @@ We'd love your help! Here's how:
 
 ```bash
 # Clone the repo
-git clone https://github.com/syedadeel2/multi-model-orchestrator.git
-cd multi-model-orchestrator
+git clone https://github.com/syedadeel2/multi-model-cli-orchestrator.git
+cd multi-model-cli-orchestrator
 
-# Read the design docs
-cat docs/plans/2026-02-01-multi-model-orchestrator-design.md
-cat docs/plans/2026-02-01-mmco-implementation.md
+# Test the components
+./lib/registry.sh check_all
+./lib/router.sh route "design a landing page"
+./lib/router.sh scores "research React best practices"
 ```
 
 ## FAQ

@@ -1,0 +1,122 @@
+# Routing configuration
+
+thresholds:
+  auto: 80        # Auto-delegate above this confidence
+  suggest: 50     # Suggest delegation above this
+
+# Pattern weights for keyword matching
+patterns:
+  kimi:
+    - pattern: "design"
+      weight: 25
+    - pattern: "landing page"
+      weight: 40
+    - pattern: "hero section"
+      weight: 35
+    - pattern: "dashboard ui"
+      weight: 35
+    - pattern: "component"
+      weight: 20
+    - pattern: "css"
+      weight: 30
+    - pattern: "tailwind"
+      weight: 30
+    - pattern: "animation"
+      weight: 30
+    - pattern: "frontend"
+      weight: 25
+    - pattern: "ui"
+      weight: 20
+    - pattern: "ux"
+      weight: 20
+    - pattern: "react component"
+      weight: 35
+    - pattern: "vue component"
+      weight: 35
+    - pattern: "visual"
+      weight: 20
+    - pattern: "beautiful"
+      weight: 15
+    - pattern: "modern"
+      weight: 10
+    - pattern: "responsive"
+      weight: 15
+    - pattern: "styled"
+      weight: 15
+    - pattern: "form"
+      weight: 15
+    - pattern: "button"
+      weight: 15
+    - pattern: "modal"
+      weight: 20
+    - pattern: "navbar"
+      weight: 25
+    - pattern: "sidebar"
+      weight: 25
+    - pattern: "card"
+      weight: 15
+
+  gemini:
+    - pattern: "search for"
+      weight: 35
+    - pattern: "find out"
+      weight: 30
+    - pattern: "what is"
+      weight: 25
+    - pattern: "research"
+      weight: 35
+    - pattern: "summarize"
+      weight: 30
+    - pattern: "explain"
+      weight: 20
+    - pattern: "documentation"
+      weight: 25
+    - pattern: "latest"
+      weight: 20
+    - pattern: "best practices"
+      weight: 25
+    - pattern: "web"
+      weight: 15
+    - pattern: "how does"
+      weight: 20
+    - pattern: "compare"
+      weight: 25
+    - pattern: "difference between"
+      weight: 25
+    - pattern: "pros and cons"
+      weight: 30
+    - pattern: "recommend"
+      weight: 20
+
+  codex:
+    - pattern: "analyze entire"
+      weight: 40
+    - pattern: "whole codebase"
+      weight: 40
+    - pattern: "all files"
+      weight: 35
+    - pattern: "large context"
+      weight: 35
+    - pattern: "codebase-wide"
+      weight: 40
+    - pattern: "refactor everything"
+      weight: 35
+    - pattern: "legacy code"
+      weight: 30
+    - pattern: "entire project"
+      weight: 35
+    - pattern: "across all"
+      weight: 30
+    - pattern: "full codebase"
+      weight: 40
+
+# CLI-specific boosts (added to pattern score)
+boosts:
+  kimi: 10
+  gemini: 5
+  codex: 5
+
+# User overrides (highest priority - exact phrase to CLI)
+overrides: {}
+  # "react component": kimi
+  # "api endpoint": claude
